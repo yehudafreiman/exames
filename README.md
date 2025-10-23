@@ -1,1 +1,1 @@
-Yehuda Freiman, Arava Class, 205368319
+Yehuda Freiman Arava 205368319
