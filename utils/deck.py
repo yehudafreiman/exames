@@ -1,8 +1,7 @@
 def create_card(rank:str,suite:str):
-    ranks_and_values = {'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'10':10,'J':11,'Q':12,'K':13,'A':14}
-    card = {'rank':rank,'suite':suite,'value':ranks_and_values[rank]}
-    return card
-# print(create_card('5','S'))
+    ranks = ['2','3','4','5','6','7','8','9','10','J','Q','K','A']
+    value = ranks.index(rank) + 2
+    return {'rank':rank,'suite':suite,'value':value}
 
 def compare_cards(p1_card:dict, p2_card:dict):
     if p1_card['value'] > p2_card['value']:
@@ -11,22 +10,22 @@ def compare_cards(p1_card:dict, p2_card:dict):
         return 'p2'
     else:
         return 'war'
-# print(compare_cards(create_card('5','S'), create_card('10','S')))
 
 def create_deck():
+    ranks = ['2','3','4','5','6','7','8','9','10','J','Q','K','A']
+    suites = ['H','C','D','S']
     deck = []
-    # ranks = [1,2,3,4,5,6,7,8,9,10,'J','Q','K','A']
-    # suits = ['H','C','D','S']
-    # values = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
-    i = 1
-    while i <= 52:
-        deck.append(create_card('2','H'))
-        i += 1
+    for rank in ranks:
+        for suite in suites:
+            deck.append(create_card(rank=rank,suite=suite))
     return deck
-# print(create_deck())
-# print(len(create_deck()))
 
+import random
 def shuffle(deck:list[dict]):
-    deck_shuffled = []
-    return deck_shuffled
-
+    shuffled_deck = create_deck()
+    for i in range(1,1001):
+        index1 = shuffled_deck[random.randint(1,52)]
+        index2 = shuffled_deck[random.randint(1,52)]
+        if index1 != index2:
+            shuffled_deck[index1], shuffled_deck[index2] == shuffled_deck[index2], shuffled_deck[index1]
+    return shuffled_deck
