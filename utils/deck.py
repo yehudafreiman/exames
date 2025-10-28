@@ -1,3 +1,5 @@
+import random
+
 def create_card(rank:str,suite:str):
     ranks = ['2','3','4','5','6','7','8','9','10','J','Q','K','A']
     value = ranks.index(rank) + 2
@@ -20,7 +22,6 @@ def create_deck():
             deck.append(create_card(rank=rank,suite=suite))
     return deck
 
-import random
 def shuffle(deck:list[dict]):
     for i in range(1,1001):
         index_1 = random.randrange(0,len(create_deck()) - 1)
