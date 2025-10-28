@@ -30,4 +30,3 @@ def shuffle(deck:list[dict]):
         else:
             continue
     return deck
-print(shuffle(create_deck()))

@@ -1,6 +1,5 @@
 from game_logic import game
-from utils import deck
 
 if __name__ == '__main__':
     game.init_game()
-    game.play_round()
+    game.play_round(game.init_game()["player_1"], game.init_game()["player_2"])
