@@ -22,10 +22,12 @@ def create_deck():
 
 import random
 def shuffle(deck:list[dict]):
-    shuffled_deck = create_deck()
     for i in range(1,1001):
-        index1 = shuffled_deck[random.randint(1,52)]
-        index2 = shuffled_deck[random.randint(1,52)]
-        if index1 != index2:
-            shuffled_deck[index1], shuffled_deck[index2] == shuffled_deck[index2], shuffled_deck[index1]
-    return shuffled_deck
+        index_1 = random.randrange(0,len(create_deck()) - 1)
+        index_2 = random.randrange(0,len(create_deck()) - 1)
+        if index_1 != index_2:
+            deck[index_1], deck[index_2] = deck[index_2], deck[index_1]
+        else:
+            continue
+    return deck
+print(shuffle(create_deck()))

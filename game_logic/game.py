@@ -18,6 +18,7 @@ def init_game():
     return game
 
 def play_round(p1:dict, p2:dict):
+
     return None
 
 
